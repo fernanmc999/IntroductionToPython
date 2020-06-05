@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Marc Fernandez.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 # On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #  You should have RUN the PREVIOUS module and READ its code.
 #  (Do so now if you have not already done so.)
@@ -28,3 +28,37 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #  Don't forget to COMMIT your work by using  VCS ~ Commit and Push.
 ########################################################################
+import rosegraphics as rg
+
+window=rg.TurtleWindow()
+
+red_turtle=rg.SimpleTurtle('turtle')
+red_turtle.pen=rg.Pen('Red',40)
+red_turtle.speed=40
+
+Curtis=rg.SimpleTurtle()
+Curtis.pen=rg.Pen('Green',15)
+Curtis.speed=50
+
+size=150
+
+for k in range(10):
+
+    red_turtle.draw_square(size)
+    red_turtle.pen_up()
+    red_turtle.right(45)
+    red_turtle.forward(50)
+    red_turtle.left(45)
+    red_turtle.pen_down()
+
+    Curtis.draw_circle(size + 100)
+    Curtis.pen_up()
+    Curtis.left(45)
+    Curtis.backward(45)
+    Curtis.left(45)
+    Curtis.pen_down()
+
+    size=size-10
+
+window.close_on_mouse_click()
+
